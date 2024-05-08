@@ -1,0 +1,46 @@
+<mat-card class="example-card">
+  <mat-card-header>
+    <img mat-card-avatar
+      src="https://static.vecteezy.com/system/resources/thumbnails/008/442/086/small_2x/illustration-of-human-icon-user-symbol-icon-modern-design-on-blank-background-free-vector.jpg"
+      class="object-cover object-top" />
+    <mat-card-title>{{ destination.user.fullName }}</mat-card-title>
+    <mat-card-subtitle>
+      {{destination.user.fullName}}
+    </mat-card-subtitle>
+  </mat-card-header>
+  <img class="h-[22rem] object-cover" mat-card-image [src]="destination.image" alt="Image" />
+  <mat-card-content>
+    <h2 class="pt-2 font-semibold">{{destination.title}}</h2>
+    <p>
+      {{ destination.description }}
+    </p>
+  </mat-card-content>
+  <mat-card-actions class="flex justify-between">
+    <div>
+      <button mat-icon-button color="accent" aria-label="Example icon button with a heart icon"
+        (click)="handleDestinationLike(destination.id)">
+        @if(destination.likes?.includes(user.id)){
+        <mat-icon>favorite</mat-icon>
+        }
+        @else{
+        <mat-icon>favorite_border</mat-icon>
+        }
+
+      </button>
+
+      <button mat-icon-button color="accent" aria-label="Example icon button with a heart icon"
+        (click)="openUpdateDestinationModal()">
+        <mat-icon>edit</mat-icon>
+      </button>
+      <button (click)="openDialog()" mat-icon-button color="accent" aria-label="Example icon button with a heart icon">
+        <mat-icon>share</mat-icon>
+      </button>
+    </div>
+    <div>
+      <button mat-icon-button color="accent" aria-label="Example icon button with a heart icon"
+        (click)="deleteDestination(destination.id)">
+        <mat-icon>delete</mat-icon>
+      </button>
+    </div>
+  </mat-card-actions>
+</mat-card>

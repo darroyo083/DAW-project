@@ -1,0 +1,36 @@
+<form (ngSubmit)="onSubmit()" class="w-[27rem] p-6 rounded-lg shadow-md">
+  <div class="mb-4">
+    <mat-form-field class="w-full" appearance="fill">
+      <mat-label class="text-gray-200">Title</mat-label>
+      <input matInput placeholder="Title" [(ngModel)]="destinationItem.title" name="title"
+        class="py-2 px-3 text-gray-200 mt-1 leading-tight focus:outline-none focus:shadow-outline" />
+    </mat-form-field>
+  </div>
+
+  <div class="mb-4">
+    <mat-form-field class="w-full" appearance="fill">
+      <mat-label class="text-gray-200">Description</mat-label>
+      <textarea matInput placeholder="Description" [(ngModel)]="destinationItem.description" name="description"
+        class="py-2 px-3 text-gray-200 mt-1 leading-tight focus:outline-none focus:shadow-outline"></textarea>
+    </mat-form-field>
+  </div>
+
+  <div class="mb-4">
+    <mat-radio-group [(ngModel)]="destinationItem.destinationType" name="destinationType" aria-label="Destination Type">
+      <mat-radio-button value="historical">Historical</mat-radio-button>
+      <mat-radio-button value="non_historical">Non Historical</mat-radio-button>
+    </mat-radio-group>
+  </div>
+
+  <div class="mb-4">
+    <mat-form-field class="w-full" appearance="fill">
+      <mat-label class="text-gray-200">Image URL</mat-label>
+      <input matInput placeholder="Image URL" [(ngModel)]="destinationItem.image" name="image"
+        class="py-2 px-3 text-gray-200 mt-1 leading-tight focus:outline-none focus:shadow-outline" />
+    </mat-form-field>
+  </div>
+
+  <button mat-raised-button color="accent" type="submit" class="">
+    Create
+  </button>
+</form>
